@@ -57,6 +57,21 @@ def send_messages():
 
 with open("config.json", "r") as f:
     config = json.loads(f.read())
+if config["token"] == "":
+    def do():
+        text = token.get("1.0", tkinter.END)
+        token.delete("1.0", tkinter.END)
+        config["token"] = text
+        root.destroy()
+    root = tkinter.Tk()
+    root.title("Token hinzufügen")
+    token = tkinter.Text(master=root, width=30, height=1)
+    token.pack(side=tkinter.LEFT)
+    add = tkinter.Button(master=root, text="Hinzufügen",
+                         command=do, width=15, height=1)
+    add.pack(side=tkinter.RIGHT)
+    root.mainloop()
+    quit()
 users = config["users"]
 
 NewsletterBot = telepot.Bot(config["token"])
@@ -74,6 +89,6 @@ send.pack(side=tkinter.RIGHT)
 root.mainloop()
 with open("config.json", "w") as f:
     f.write(json.dumps({
-        "token": config['token'],
+        "token": config["token"],
         "users": users
     }))
