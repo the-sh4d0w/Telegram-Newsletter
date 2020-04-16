@@ -1,2 +1,2 @@
 # Telegram-Newsletter
-A newsletter program, that allows sending messages to numerous users and timing those messages.
+A simple newsletter program that allows sending Telegram messages to numerous users and planning those messages.
