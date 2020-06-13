@@ -134,5 +134,5 @@ root.mainloop()
 
 # saves data in the file config.json
 with open(CONFIG, "w") as f:
-    f.write(json.dumps({"token": config["token"], "users": users}))
+    f.write(json.dumps(config))
 quit()
